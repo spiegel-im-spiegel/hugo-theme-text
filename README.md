@@ -6,8 +6,8 @@
 
 Clone this repository to your hugo theme directory.
 
-	$ git clone https://github.com/rakuishi/hugo-zen.git themes/hugo-zen
-	$ hugo server --theme=hugo-zen --buildDrafts --watch
+	$ git clone https://github.com/spiegel-im-spiegel/hugo-theme-text.git themes/hugo-theme-text
+	$ hugo server --theme=hugo-theme-text --buildDrafts --watch
 
 ## Configuration
 
@@ -40,4 +40,4 @@ flattr      = "spiegel"
 
 These codes are licensed under CC0.
 
-[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/deed.ja)
+[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/)
