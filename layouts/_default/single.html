@@ -1,0 +1,19 @@
+{{ partial "top.html" . }}
+{{ partial "header.html" . }}
+<body>
+<div id='container'><!-- Container Area -->
+{{ partial "banner.html" . }}
+
+<main role="main">
+<article>
+<section>
+<h1>{{ .Title }}{{ with .Section }} [<a href="/{{ . }}">{{ . }}</a>]{{ end }}</h1>
+<nav>{{ with .Params.tags }}<div>Tags:{{ range . }} <a href="/tags/{{ . }}">{{ . }}</a>{{ end }}</div>{{ end }}</nav>
+{{ .Content }}
+</section>
+</article>
+</main>
+
+{{ partial "footer.html" . }}
+</div><!-- Container Area -->
+</body>

@@ -19,11 +19,13 @@ title        = "text.Baldanders.info"
 languageCode = "ja"
 
 [params]
-author      = "Spiegel"
-profileurl  = "http://www.baldanders.info/spiegel/profile/"
 description = "帰ってきた「しっぽのさきっちょ」"
-avatar      = "/images/avatar.jpg"
 favicon     = "/favicon.ico"
+
+[params.author]
+name        = "Spiegel"
+profileurl  = "http://www.baldanders.info/spiegel/profile/"
+avatar      = "/images/avatar.jpg"
 license     = "by-sa"
 github      = "spiegel-im-spiegel"
 twitter     = "spiegel_2007"

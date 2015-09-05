@@ -1,19 +1,37 @@
 <footer><!-- Footer Section -->
-<div class="userinfo">
-	<div class="userinfo-avater">
-		{{ if .Site.Params.avatar }}
-			{{ if .Site.Params.profileurl }}<a href="{{ .Site.Params.profileurl }}">{{ end }}<img src="{{ .Site.Params.avatar }}" width="48" height="48">{{ if .Site.Params.profileurl }}</a>{{ end }}
-		{{ else }}
-			<img src="/images/avatar.png" width="48" height="48">
-		{{ end }}
+{{ if .Params }}
+	<div class="userinfo">
+		<div class="userinfo-avater">
+			{{ if .Params.author.avatar }}
+				{{ if .Params.author.profileurl }}<a href="{{ .Params.author.profileurl }}">{{ end }}<img src="{{ .Params.author.avatar }}" width="48" height="48">{{ if .Params.author.profileurl }}</a>{{ end }}
+			{{ else }}
+				<img src="/images/avatar.png" width="48" height="48">
+			{{ end }}
+		</div>
+		<div class="userinfo-info">
+			{{ if .Params.author.name }}
+				Written and revised by {{ if .Params.author.profileurl }}<a href="{{ .Params.author.profileurl }}">{{ .Params.author.name }}</a>{{ else }}{{ .Params.author.name }}{{ end }} in {{ .Date.Format "2006-01-02" }}.
+			{{ end }}
+			{{ partial "social.html" . }}
+		</div>
 	</div>
-	<div class="userinfo-info">
-		{{ if .Site.Params.author }}
-			Written and revised by {{ if .Site.Params.profileurl }}<a href="{{ .Site.Params.profileurl }}">{{ .Site.Params.author }}</a>{{ else }}{{ .Site.Params.author }}{{ end }} in {{ .Date.Format "2006-01-02" }}.
-		{{ end }}
-		{{ partial "social.html" . }}
+{{ else }}
+	<div class="userinfo">
+		<div class="userinfo-avater">
+			{{ if .Site.Params.author.avatar }}
+				{{ if .Site.Params.author.profileurl }}<a href="{{ .Site.Params.author.profileurl }}">{{ end }}<img src="{{ .Site.Params.author.avatar }}" width="48" height="48">{{ if .Site.Params.author.profileurl }}</a>{{ end }}
+			{{ else }}
+				<img src="/images/avatar.png" width="48" height="48">
+			{{ end }}
+		</div>
+		<div class="userinfo-info">
+			{{ if .Site.Params.author.name }}
+				Written and revised by {{ if .Site.Params.author.profileurl }}<a href="{{ .Site.Params.author.profileurl }}">{{ .Site.Params.author.name }}</a>{{ else }}{{ .Site.Params.author.name }}{{ end }}.
+			{{ end }}
+			{{ partial "social.html" . }}
+		</div>
 	</div>
-</div>
+{{ end }}
 {{ partial "navi.html" . }}
 </footer><!-- Footer Section -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>

@@ -6,14 +6,15 @@
 
 <main role="main">
 <article>
-<h2>{{ $root := eq .Title .Site.Title }}{{ if eq $root true }}What's New{{ else }}{{ .Title }}{{ end }}</h2>
+<h2>{{ .Title }}</h2>
 <ul style="list-style:none;">
-{{ range .Site.Pages }}
+{{ range .Data.Pages }}
 <li><a href="{{ .RelPermalink }}">{{ .Title }} (<time pubdate="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>)</a>{{ if .Draft }} #Draft{{ end }}</li>
 {{ end }}
 </ul>
 </article>
 </main>
+
 {{ partial "footer.html" . }}
 </div><!-- Container Area -->
 </body>
