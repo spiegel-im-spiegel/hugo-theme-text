@@ -1,7 +1,11 @@
 <footer><!-- Footer Section -->
 <div class="userinfo">
 	<div class="userinfo-avater">
-		<img src="{{ .Site.Params.avatar }}" width="48" height="48">
+		{{ if .Site.Params.avatar }}
+			{{ if .Site.Params.profileurl }}<a href="{{ .Site.Params.profileurl }}">{{ end }}<img src="{{ .Site.Params.avatar }}" width="48" height="48">{{ if .Site.Params.profileurl }}</a>{{ end }}
+		{{ else }}
+			<img src="/images/avatar.png" width="48" height="48">
+		{{ end }}
 	</div>
 	<div class="userinfo-info">
 		{{ if .Site.Params.author }}
