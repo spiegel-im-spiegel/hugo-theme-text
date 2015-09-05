@@ -1,0 +1,9 @@
+{{ with .Site.Params.disqus }}<aside id='feedback'>
+<h1>Feedback</h1>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_shortname = "{{ . }}";
+</script>
+<script src='/js/disqusembed.js'></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</aside>{{ end }}

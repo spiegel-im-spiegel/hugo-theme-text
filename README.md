@@ -21,6 +21,7 @@ languageCode = "ja"
 [params]
 description = "帰ってきた「しっぽのさきっちょ」"
 favicon     = "/favicon.ico"
+disqus      = "disqus_shortname"
 
 [params.author]
 name        = "Spiegel"

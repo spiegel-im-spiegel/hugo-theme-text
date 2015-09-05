@@ -1,4 +1,4 @@
-{{ if .Params }}
+{{ if .Params.author }}
 	{{ if eq .Params.author.license "by" }}
 		<a rel='cc:license' href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><i class="cc cc-by"></i></a>
 	{{ else }}{{ if eq .Params.author.license "by-nc" }}
