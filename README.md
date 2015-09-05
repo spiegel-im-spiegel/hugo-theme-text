@@ -14,25 +14,27 @@ Clone this repository to your hugo theme directory.
 In this theme you can add variables to your site config file. The following is the example config:
 
 ```toml:config.toml
-baseurl = "http://text.baldanders.info/"
+baseurl      = "http://text.baldanders.info/"
+title        = "text.Baldanders.info"
 languageCode = "ja"
-title = "text.Baldanders.info"
 
 [params]
-author    = "Spiegel"
-avatar    = "/images/avatar.jpg"
-favicon   = "/favicon.ico"
-license   = "by-sa"
-github    = "spiegel-im-spiegel"
-twitter   = "spiegel_2007"
-medium    = "@spiegel"
-instagram = "spiegel_2007"
-facebook  = "spiegel.im.spiegel"
-linkedin  = "spiegelimspiegel"
-flattr    = "spiegel"
+author      = "Spiegel"
+profileurl  = "http://www.baldanders.info/spiegel/profile/"
+description = "帰ってきた「しっぽのさきっちょ」"
+avatar      = "/images/avatar.jpg"
+favicon     = "/favicon.ico"
+license     = "by-sa"
+github      = "spiegel-im-spiegel"
+twitter     = "spiegel_2007"
+medium      = "@spiegel"
+instagram   = "spiegel_2007"
+facebook    = "spiegel.im.spiegel"
+linkedin    = "spiegelimspiegel"
+flattr      = "spiegel"
 ```
 
-## license
+## License
 
 These codes are licensed under CC0.
 
