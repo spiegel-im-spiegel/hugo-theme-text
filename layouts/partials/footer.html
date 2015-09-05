@@ -1,0 +1,16 @@
+<footer><!-- Footer Section -->
+<div class="userinfo">
+	<div class="userinfo-avater">
+		<img src="{{ .Site.Params.avatar }}" width="48" height="48">
+	</div>
+	<div class="userinfo-info">
+		{{ if .Site.Params.author }}
+			Written and revised by {{ if .Site.Params.profileurl }}<a href="{{ .Site.Params.profileurl }}">{{ .Site.Params.author }}</a>{{ else }}{{ .Site.Params.author }}{{ end }} in {{ .Date.Format "2006-01-02" }}.
+		{{ end }}
+		{{ partial "social.html" . }}
+	</div>
+</div>
+{{ partial "navi.html" . }}
+</footer><!-- Footer Section -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>

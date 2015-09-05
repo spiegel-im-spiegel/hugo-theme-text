@@ -1,0 +1,10 @@
+<ul class="social">
+{{ with .Site.Params.github }}<li><a href="https://github.com/{{ . }}" target="_blank"><i class="fa fa-github"></i></a></li>{{ end }}
+{{ with .Site.Params.twitter }}<li><a href="https://twitter.com/{{ . }}" target="_blank"><i class="fa fa-twitter"></i></a></li>{{ end }}
+{{ with .Site.Params.medium }}<li><a href="https://medium.com/@{{ . }}" target="_blank"><i class="fa fa-medium"></i></a></li>{{ end }}
+{{ with .Site.Params.instagram }}<li><a href="http://instagram.com/{{ . }}" target="_blank"><i class="fa fa-instagram"></i></a></li>{{ end }}
+{{ with .Site.Params.facebook }}<li><a href="https://www.facebook.com/{{ . }}" target="_blank"><i class="fa fa-facebook"></i></a></li>{{ end }}
+{{ with .Site.Params.linkedin }}<li><a href="https://jp.linkedin.com/in/{{ . }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>{{ end }}
+{{ with .Site.Params.email }}<li><a href="mailto:{{ . }}" target="_blank"><i class="fa fa-envelope"></i></a></li>{{ end }}
+</ul>
+{{ if .Site.Params.flattr }}<div><a href="https://flattr.com/submit/auto?user_id={{ .Site.Params.flattr }}&amp;url={{ .Permalink }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a></div>{{ end }}
