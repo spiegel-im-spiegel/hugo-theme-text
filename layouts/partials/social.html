@@ -8,7 +8,11 @@
 		{{ with .Params.author.linkedin }}<li><a href="https://jp.linkedin.com/in/{{ . }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>{{ end }}
 		{{ with .Params.author.email }}<li><a href="mailto:{{ . }}" target="_blank"><i class="fa fa-envelope"></i></a></li>{{ end }}
 	</ul>
-	{{ if .Params.author.flattr }}<div><a href="https://flattr.com/submit/auto?user_id={{ .Params.author.flattr }}&amp;url={{ .Permalink }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a></div>{{ end }}
+	<div>
+		{{ if .Params.author.facebook }}<div class="fb-share-button" data-href="{{ .Permalink }}" data-layout="button"></div>{{ end }}
+		{{ if .Params.author.twitter }}<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ .Title }} - {{ .Site.Title }}" data-via="{{ .Params.author.twitter }}" data-count="none" data-dnt="true">Tweet</a>{{ end }}
+		{{ if .Params.author.flattr }}<a href="https://flattr.com/submit/auto?user_id={{ .Params.author.flattr }}&amp;url={{ .Permalink }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>{{ end }}
+	</div>
 {{ else }}
 	<ul class="social">
 		{{ with .Site.Params.author.github }}<li><a href="https://github.com/{{ . }}" target="_blank"><i class="fa fa-github"></i></a></li>{{ end }}
@@ -19,5 +23,9 @@
 		{{ with .Site.Params.author.linkedin }}<li><a href="https://jp.linkedin.com/in/{{ . }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>{{ end }}
 		{{ with .Site.Params.author.email }}<li><a href="mailto:{{ . }}" target="_blank"><i class="fa fa-envelope"></i></a></li>{{ end }}
 	</ul>
-	{{ if .Site.Params.author.flattr }}<div><a href="https://flattr.com/submit/auto?user_id={{ .Site.Params.author.flattr }}&amp;url={{ .Permalink }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a></div>{{ end }}
+	<div>
+		{{ if .Site.Params.author.facebook }}<div class="fb-share-button" data-href="{{ .Permalink }}" data-layout="button"></div>{{ end }}
+		{{ if .Site.Params.author.twitter }}<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ .Site.Title }}" data-via="{{ .Site.Params.author.twitter }}" data-count="none" data-dnt="true">Tweet</a>{{ end }}
+		{{ if .Site.Params.author.flattr }}<a href="https://flattr.com/submit/auto?user_id={{ .Site.Params.author.flattr }}&amp;url={{ .Permalink }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>{{ end }}
+	</div>
 {{ end }}
