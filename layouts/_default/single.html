@@ -9,7 +9,7 @@
 <article>
 <section>
 <h1>{{ .Title }}{{ with .Section }} [<a href="/{{ . }}">{{ . }}</a>]{{ end }}</h1>
-<nav>{{ with .Params.tags }}<div>Tags:{{ range . }} <a href="/tags/{{ . }}">{{ . }}</a>{{ end }}</div>{{ end }}</nav>
+<nav>{{ with .Params.tags }}<div>Tags:{{ range . }} <a href="/tags/{{ . }}">#{{ . }}</a>{{ end }}</div>{{ end }}</nav>
 {{ .Content }}
 </section>
 </article>
