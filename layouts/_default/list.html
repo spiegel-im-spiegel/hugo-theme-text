@@ -7,11 +7,11 @@
 
 <main role="main">
 <article>
-<h2>Entries of “{{ .Title }}”</h2>
+<h2>Entries of {{ .Title }}</h2>
 <ul style="list-style:none;">
 {{ range .Data.Pages }}
 <li>
-	{{ with .Section }}[<a href="/{{ . }}">{{ . }}</a>] {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}
+	{{ with .Section }}[<a href="/{{ . }}">{{ . }}</a>] {{ end }}<a href="{{ .Permalink }}">{{ .Title }}
 	({{ with .Params.author.name }}by {{ . }}, {{ end }}<time pubdate="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>)</a>{{ if .Draft }} #Draft{{ end }}
 	{{ with .Params.tags }}{{ range . }} #<a href="/tags/{{ . }}">{{ . }}</a>{{ end }}{{ end }}{{ if .Draft }} #Draft{{ end }}
 	{{ with .Description }}<br>&raquo; {{ . }}{{ end }}

@@ -11,7 +11,7 @@
 <ul style="list-style:none;">
 {{ range .Site.Pages }}
 	<li>
-		{{ with .Section }}[<a href="/{{ . }}">{{ . }}</a>] {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+		{{ with .Section }}[<a href="/{{ . }}">{{ . }}</a>] {{ end }}<a href="{{ .Permalink }}">{{ .Title }}</a>
 		({{ with .Params.author.name }}by {{ . }}, {{ end }}<time pubdate="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>)
 		{{ with .Params.tags }}{{ range . }} #<a href="/tags/{{ . }}">{{ . }}</a>{{ end }}{{ end }}{{ if .Draft }} #Draft{{ end }}
 		{{ with .Description }}<br>&raquo; {{ . }}{{ end }}
