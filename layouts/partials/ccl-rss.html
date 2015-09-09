@@ -1,0 +1,15 @@
+{{ if eq . "by" }}
+	<link rel="cc:license" type="application/rdf+xml" href="http://creativecommons.org/licenses/by/4.0/rdf" />
+{{ else if eq . "by-nc" }}
+	<link rel="cc:license" type="application/rdf+xml" href="http://creativecommons.org/licenses/by-nc/4.0/rdf" />
+{{ else if eq . "by-sa" }}
+	<link rel="cc:license" type="application/rdf+xml" href="http://creativecommons.org/licenses/by-sa/4.0/rdf" />
+{{ else if eq . "by-nc-sa" }}
+	<link rel="cc:license" type="application/rdf+xml" href="http://creativecommons.org/licenses/by-nc-sa/4.0/rdf" />
+{{ else if eq . "by-nd" }}
+	<link rel="cc:license" type="application/rdf+xml" href="http://creativecommons.org/licenses/by-nd/4.0/rdf" />
+{{ else if eq . "by-nc-nd" }}
+	<link rel="cc:license" type="application/rdf+xml" href="http://creativecommons.org/licenses/by-nc-nd/4.0/rdf" />
+{{ else if eq . "cc0" }}
+	<link rel="cc:license" type="application/rdf+xml" href="http://creativecommons.org/publicdomain/zero/1.0/rdf" />
+{{ end }}
