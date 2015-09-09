@@ -1,7 +1,7 @@
 {{ partial "top.html" . }}
 <head>
 {{ partial "header.html" . }}
-<title>List of {{ .Title }}} - {{ .Site.Title }}</title>
+<title>List of {{ .Title }} - {{ .Site.Title }}</title>
 </head>
 <body>
 {{ partial "prepare.html" . }}
@@ -10,13 +10,13 @@
 
 <main role="main">
 <article>
-<h2>Entries of {{ .Title }}</h2>
+<h2>Entries of {{ .Title }} <a href='{{ .RSSLink }}' title='Feed'><i class='fa fa-rss'></i></a></h2>
 <ul style="list-style:none;">
 {{ range .Data.Pages }}
 <li>
-	{{ with .Section }}[<a href="/{{ . }}">{{ . }}</a>] {{ end }}<a href="{{ .Permalink }}">{{ .Title }}
-	({{ with .Params.author.name }}by {{ . }}, {{ end }}<time pubdate="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>)</a>{{ if .Draft }} #Draft{{ end }}
-	{{ with .Params.tags }}{{ range . }} #<a href="/tags/{{ . }}">{{ . }}</a>{{ end }}{{ end }}{{ if .Draft }} #Draft{{ end }}
+	{{ with .Section }}[<a href="/{{ . | urlize }}">{{ . }}</a>] {{ end }}<a href="{{ .Permalink }}"><strong>{{ .Title }}</strong></a>
+	({{ with .Params.author.name }}by {{ . }}, {{ end }}<time pubdate="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>)
+	{{ with .Params.tags }}{{ range . }} #<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }}{{ if .Draft }} <span class="caution">#Draft</span>{{ end }}
 	{{ with .Description }}<br>&raquo; {{ . }}{{ end }}
 </li>
 {{ end }}

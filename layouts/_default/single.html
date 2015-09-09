@@ -11,8 +11,8 @@
 <main role="main">
 <article>
 <section>
-<h1>{{ .Title }}{{ with .Section }} [<a href="/{{ . }}">{{ . }}</a>]{{ end }}</h1>
-<nav>{{ with .Params.tags }}<div>Tags:{{ range . }} <a href="/tags/{{ . }}">#{{ . }}</a>{{ end }}</div>{{ end }}</nav>
+<h1>{{ .Title }}{{ with .Section }} [<a href="/{{ . | urlize }}">{{ . }}</a>]{{ end }}</h1>
+<nav>{{ with .Params.tags }}<div>Tags:{{ range . }} <a href="/tags/{{ . | urlize }}">#{{ . }}</a>{{ end }}</div>{{ end }}</nav>
 {{ .Content }}
 </section>
 </article>
