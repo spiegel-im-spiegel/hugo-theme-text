@@ -3,32 +3,32 @@
 	<div class="userinfo">
 		<div class="userinfo-avater">
 			{{ if .Params.author.avatar }}
-				{{ if .Params.author.profileurl }}<a href="{{ .Params.author.profileurl }}">{{ end }}<img src="{{ .Params.author.avatar }}" width="48" height="48">{{ if .Params.author.profileurl }}</a>{{ end }}
+				{{ if .Params.author.url }}<a href="{{ .Params.author.url }}">{{ end }}<img src="{{ .Params.author.avatar }}" width="48" height="48">{{ if .Params.author.url }}</a>{{ end }}
 			{{ else }}
 				<img src="/images/avatar.png" width="48" height="48">
 			{{ end }}
 		</div>
 		<div class="userinfo-info">
 			{{ if .Params.author.name }}
-				Written and revised by {{ if .Params.author.profileurl }}<a href="{{ .Params.author.profileurl }}">{{ .Params.author.name }}</a>{{ else }}{{ .Params.author.name }}{{ end }} in {{ .Date.Format "2006-01-02" }}.
-				{{ partial "cc-license.html" . }}
+				Written and revised by {{ if .Params.author.url }}<a href="{{ .Params.author.url }}">{{ .Params.author.name }}</a>{{ else }}{{ .Params.author.name }}{{ end }} in {{ .Date.Format "2006-01-02" }}.
+				{{ partial "cc-license.html" .Params.author.license }}
 			{{ end }}
 			{{ partial "social.html" . }}
 		</div>
 	</div>
-{{ else }}
+{{ else if .Site.Params.author }}
 	<div class="userinfo">
 		<div class="userinfo-avater">
 			{{ if .Site.Params.author.avatar }}
-				{{ if .Site.Params.author.profileurl }}<a href="{{ .Site.Params.author.profileurl }}">{{ end }}<img src="{{ .Site.Params.author.avatar }}" width="48" height="48">{{ if .Site.Params.author.profileurl }}</a>{{ end }}
+				{{ if .Site.Params.author.url }}<a href="{{ .Site.Params.author.url }}">{{ end }}<img src="{{ .Site.Params.author.avatar }}" width="48" height="48">{{ if .Site.Params.author.url }}</a>{{ end }}
 			{{ else }}
 				<img src="/images/avatar.png" width="48" height="48">
 			{{ end }}
 		</div>
 		<div class="userinfo-info">
 			{{ if .Site.Params.author.name }}
-				Written and revised by {{ if .Site.Params.author.profileurl }}<a href="{{ .Site.Params.author.profileurl }}">{{ .Site.Params.author.name }}</a>{{ else }}{{ .Site.Params.author.name }}{{ end }}.
-				{{ partial "cc-license.html" . }}
+				Written and revised by {{ if .Site.Params.author.url }}<a href="{{ .Site.Params.author.url }}">{{ .Site.Params.author.name }}</a>{{ else }}{{ .Site.Params.author.name }}{{ end }}.
+				{{ partial "cc-license.html" .Site.Params.author.license }}
 			{{ end }}
 			{{ partial "social.html" . }}
 		</div>
@@ -36,4 +36,3 @@
 {{ end }}
 {{ partial "navi.html" . }}
 </footer><!-- Footer Section -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>

@@ -1,5 +1,8 @@
 {{ partial "top.html" . }}
+<head>
 {{ partial "header.html" . }}
+<title>List of {{ .Title }}} - {{ .Site.Title }}</title>
+</head>
 <body>
 {{ partial "prepare.html" . }}
 <div id='container'><!-- Container Area -->
@@ -23,5 +26,6 @@
 
 {{ partial "footer.html" . }}
 </div><!-- Container Area -->
+{{ partial "cleanup.html" . }}
 </body>
 {{ partial "end.html" . }}
