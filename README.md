@@ -14,27 +14,28 @@ Clone this repository to your hugo theme directory.
 In this theme you can add variables to your site config file. The following is the example config:
 
 ```toml:config.toml
-baseurl      = "http://text.baldanders.info/"
-title        = "text.Baldanders.info"
-languageCode = "ja"
+theme           = "hugo-theme-text"
+baseurl         = "http://example.com"
+title           = "Yuor Site Name"
+languageCode    = "ja"
+disqusShortname = "Disqus Short Name" #optional
 
 [params]
-description = "帰ってきた「しっぽのさきっちょ」"
-favicon     = "/favicon.ico"
-disqus      = "disqus_shortname"
+description = "Site Description" #optional
+favicon     = "/favicon.ico" #optional
 
 [params.author]
-name        = "Spiegel"
-profileurl  = "http://www.baldanders.info/spiegel/profile/"
-avatar      = "/images/avatar.jpg"
-license     = "by-sa"
-github      = "spiegel-im-spiegel"
-twitter     = "spiegel_2007"
-medium      = "@spiegel"
-instagram   = "spiegel_2007"
-facebook    = "spiegel.im.spiegel"
-linkedin    = "spiegelimspiegel"
-flattr      = "spiegel"
+name      = "Your Name"
+url       = "URL for Your Profile" #optional
+avatar    = "URL for Your icon (50×50)" #optional
+license   = "CC-License: [by|by-sa|by-nc|by-nc-sa|by-nd|by-nc-nd|cc0]" #optional
+github    = "Your GitHub ID" #optional
+twitter   = "Your Twitter ID" #optional
+medium    = "'@' + Your Medium ID" #optional
+instagram = "Your Instagram ID" #optional
+facebook  = "Your Facebook ID" #optional
+linkedin  = "Your LinkedIn ID" #optional
+flattr    = "Your Flattr ID" #optional
 ```
 
 ## License
