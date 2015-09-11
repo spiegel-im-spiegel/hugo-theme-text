@@ -1,0 +1,4 @@
+<li>{{ with .Section }}[<a href="/{{ . | urlize }}">{{ . }}</a>] {{ end }}<a href="{{ .Permalink }}"><strong>{{ .Title }}</strong></a>
+	({{ with .Params.author.name }}by {{ . }}, {{ end }}{{ .Date.Format "2006-01-02" }})
+	{{ with .Params.tags }}{{ range . }} #<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }}{{ if .Draft }} <span class="caution">#Draft</span>{{ end }}
+	{{ with .Description }}<br>&raquo; {{ . }}{{ end }}</li>
