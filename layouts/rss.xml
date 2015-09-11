@@ -11,7 +11,7 @@
 
 	{{ range first 10 .Data.Pages }}
 	<entry>
-		<title>{{ .Title }}</title>
+		<title>{{ .Title }}{{ with .Section }} - {{ . }}{{ end }}</title>
 		<link rel="alternate" type="text/html" href="{{ .Permalink }}" />
 		<id>tag:{{ .Site.Title }},{{ .Date.Format "2006-01-02T15:04:05.999999999-0700" | safeHTML }}:{{ .RelPermalink }}</id>
 		<published>{{ .Date.Format "2006-01-02T15:04:05-07-0700" | safeHTML }}</published>
