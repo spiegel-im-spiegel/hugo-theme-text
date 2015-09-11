@@ -8,9 +8,9 @@
 				<img src="/images/avatar.png" width="48" height="48">
 			{{ end }}
 		</div>
-		<div class="userinfo-info">
+		<div class="userinfo-info" id="maker" itemprop='author' itemscope itemtype='http://schema.org/Person'>
 			{{ if .Params.author.name }}
-				Written by {{ if .Params.author.url }}<a href="{{ .Params.author.url }}">{{ .Params.author.name }}</a>{{ else }}{{ .Params.author.name }}{{ end }} in {{ .Date.Format "2006-01-02" }}{{ with .Params.update }} (revised in {{ . | dateFormat "2006-01-02" }}){{ end }}.
+				{{ if .IsPage }}Written{{ else }}Revised{{ end }} by {{ if .Params.author.url }}<a href="{{ .Params.author.url }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ .Params.author.name }}</a>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ .Params.author.name }}</span>{{ end }} in <time property='dc:dateCopyrighted'>{{ .Date.Format "2006-01-02" }}</time>{{ with .Params.update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}.
 				{{ with .Params.author.license }}{{ partial "cc-license.html" . }}{{ end }}
 			{{ end }}
 			{{ partial "social.html" . }}
@@ -25,9 +25,9 @@
 				<img src="/images/avatar.png" width="48" height="48">
 			{{ end }}
 		</div>
-		<div class="userinfo-info">
+		<div class="userinfo-info" id="maker" itemprop='author' itemscope itemtype='http://schema.org/Person'>
 			{{ if .Site.Params.author.name }}
-				Written by {{ if .Site.Params.author.url }}<a href="{{ .Site.Params.author.url }}">{{ .Site.Params.author.name }}</a>{{ else }}{{ .Site.Params.author.name }}{{ end }}{{ if $root }}, since 2015{{ else }} in {{ .Date.Format "2006-01-02" }}{{ with .Params.update }} (revised in {{ . | dateFormat "2006-01-02" }}){{ end }}{{ end }}.
+				{{ if .IsPage }}Written{{ else }}Revised{{ end }} by {{ if .Site.Params.author.url }}<a href="{{ .Site.Params.author.url }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ .Site.Params.author.name }}</a>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ .Site.Params.author.name }}</span>{{ end }}{{ if $root }}{{ with .Site.Params.since }}, since <time property='dc:dateCopyrighted'>{{ . | dateFormat "2006" }}</time>{{ end }}{{ else }} in <time property='dc:dateCopyrighted'>{{ .Date.Format "2006-01-02" }}</time>{{ with .Params.update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}{{ end }}.
 				{{ with .Site.Params.author.license }}{{ partial "cc-license.html" . }}{{ end }}
 			{{ end }}
 			{{ partial "social.html" . }}

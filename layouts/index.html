@@ -10,8 +10,8 @@
 {{ partial "banner.html" . }}
 
 <main role="main">
-<article>
-<h2>All Entries</h2>
+<article itemscope itemtype='http://schema.org/Blog' itemref='maker'>
+<h2 itemprop='name'>All Entries</h2>
 <ul style="list-style:none;">{{ range .Site.Pages }}{{ partial "li.html" . }}{{ end }}</ul>
 </article>
 </main>
