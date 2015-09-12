@@ -4,7 +4,7 @@ licenselink = "https://github.com/spiegel-im-spiegel/hugo-theme-text/blob/master
 description = "Simple Text (Hugo Theme)"
 homepage = "http://text.baldanders.info/"
 tags = ["text", "blog"]
-features = ["text", "cc-license", "social", "disqus", "highlight.js", "mathjax"]
+features = ["text", "cc-license", "social", "disqus"]
 min_version = 0.14
 
 [author]

@@ -21,6 +21,7 @@ languageCode    = "ja"
 disqusShortname = "Disqus Short Name" #optional
 
 [params]
+since       = "2015-01-01" #datetime format #optional
 description = "Site Description" #optional
 favicon     = "/favicon.ico" #optional
 

@@ -7,26 +7,5 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/text-baldanders.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/github.min.css">
+{{ partial "header-include.html" . }}
 <link rel="alternate" href="/index.xml" type="application/rss+xml" title="{{ .Site.Title }}">
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;locale=ja"></script>
-<script>
-  MathJax.Hub.Config({
-    TeX: {
-      extensions: ["autoload-all.js"],
-      equationNumbers: { autoNumber: "all" }
-    },
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true
-    },
-    "HTML-CSS": {
-      matchFontHeight: false,
-      preferredFont: null,
-      webFont: "TeX"
-    },
-    displayAlign: "left",
-    displayIndent: "2em"
-  });
-</script>
-<script src='//platform.twitter.com/widgets.js'></script>
