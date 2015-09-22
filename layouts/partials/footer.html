@@ -1,38 +1,38 @@
 <footer><!-- Footer Section -->
-{{ if .Params.author }}
+{{ with .Params.author }}
 	<div class="userinfo">
 		<div class="userinfo-avater">
-			{{ if .Params.author.avatar }}
-				{{ if .Params.author.url }}<a href="{{ .Params.author.url }}">{{ end }}<img src="{{ .Params.author.avatar }}" width="48" height="48">{{ if .Params.author.url }}</a>{{ end }}
+			{{ if .avatar }}
+				{{ if .url }}<a href="{{ .url }}">{{ end }}<img src="{{ .avatar }}" width="48" height="48">{{ if .url }}</a>{{ end }}
 			{{ else }}
 				<img src="/images/avatar.png" width="48" height="48">
 			{{ end }}
 		</div>
 		<div class="userinfo-info" id="maker" itemprop='author' itemscope itemtype='http://schema.org/Person'>
-			{{ if .Params.author.name }}
-				{{ if .IsPage }}Written{{ else }}Revised{{ end }} by {{ if .Params.author.url }}<a href="{{ .Params.author.url }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ .Params.author.name }}</a>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ .Params.author.name }}</span>{{ end }} in <time property='dc:dateCopyrighted'>{{ .Date.Format "2006-01-02" }}</time>{{ with .Params.update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}.
-				{{ with .Params.author.license }}{{ partial "cc-license.html" . }}{{ end }}
+			{{ if .name }}
+				{{ if $.IsPage }}Written{{ else }}Revised{{ end }} by {{ with .url }}<a href="{{ . }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ end }}{{ .name }}{{ if .url }}</a>{{ else }}</span>{{ end }} in <time property='dc:dateCopyrighted'>{{ $.Date.Format "2006-01-02" }}</time>{{ with .update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}.
+				{{ with .license }}{{ partial "cc-license.html" . }}{{ end }}
 			{{ end }}
-			{{ partial "social.html" . }}
+			{{ partial "social.html" $ }}
 		</div>
 	</div>
-{{ else if .Site.Params.author }}{{ $root := eq .Site.Title .Title }}
+{{ else }}{{ with .Site.Params.author }}{{ $root := eq $.Site.Title $.Title }}
 	<div class="userinfo">
 		<div class="userinfo-avater">
-			{{ if .Site.Params.author.avatar }}
-				{{ if .Site.Params.author.url }}<a href="{{ .Site.Params.author.url }}">{{ end }}<img src="{{ .Site.Params.author.avatar }}" width="48" height="48">{{ if .Site.Params.author.url }}</a>{{ end }}
+			{{ if .avatar }}
+				{{ if .url }}<a href="{{ .url }}">{{ end }}<img src="{{ .avatar }}" width="48" height="48">{{ if .url }}</a>{{ end }}
 			{{ else }}
 				<img src="/images/avatar.png" width="48" height="48">
 			{{ end }}
 		</div>
 		<div class="userinfo-info" id="maker" itemprop='author' itemscope itemtype='http://schema.org/Person'>
-			{{ if .Site.Params.author.name }}
-				{{ if .IsPage }}Written{{ else }}Revised{{ end }} by {{ if .Site.Params.author.url }}<a href="{{ .Site.Params.author.url }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ .Site.Params.author.name }}</a>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ .Site.Params.author.name }}</span>{{ end }}{{ if $root }}{{ with .Site.Params.since }}, since <time property='dc:dateCopyrighted'>{{ . | dateFormat "2006" }}</time>{{ end }}{{ else }} in <time property='dc:dateCopyrighted'>{{ .Date.Format "2006-01-02" }}</time>{{ with .Params.update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}{{ end }}.
-				{{ with .Site.Params.author.license }}{{ partial "cc-license.html" . }}{{ end }}
+			{{ if .name }}
+				{{ if $.IsPage }}Written{{ else }}Revised{{ end }} by {{ with .url }}<a href="{{ . }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ end }}{{ .name }}{{ if .url }}</a>{{ else }}</span>{{ end }}{{ if $root }}{{ with $.Site.Params.since }}, since <time property='dc:dateCopyrighted'>{{ . | dateFormat "2006" }}</time>{{ end }}{{ else }} in <time property='dc:dateCopyrighted'>{{ $.Date.Format "2006-01-02" }}</time>{{ with .update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}{{ end }}.
+				{{ with .license }}{{ partial "cc-license.html" . }}{{ end }}
 			{{ end }}
-			{{ partial "social.html" . }}
+			{{ partial "social.html" $ }}
 		</div>
 	</div>
-{{ end }}
+{{ end }}{{ end }}
 {{ partial "navi.html" . }}
 </footer><!-- Footer Section -->
