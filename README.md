@@ -2,6 +2,8 @@
 
 "Simple Text" is simple theme for Text Site.
 
+![Simple Text](https://farm1.staticflickr.com/718/21069070064_9331d16711_o.png)
+
 ## Installation & Usage
 
 Clone this repository to your hugo theme directory.
