@@ -10,7 +10,7 @@
 		</div>
 		<div class="userinfo-info" id="maker" itemprop='author' itemscope itemtype='http://schema.org/Person'>
 			{{ if .name }}
-				{{ if $.IsPage }}Written{{ else }}Revised{{ end }} by {{ with .url }}<a href="{{ . }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ end }}{{ .name }}{{ if .url }}</a>{{ else }}</span>{{ end }} in <time property='dc:dateCopyrighted'>{{ $.Date.Format "2006-01-02" }}</time>{{ with .update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}.
+				{{ if $.IsPage }}Written{{ else }}Revised{{ end }} by {{ with .url }}<a href="{{ . }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ end }}{{ .name }}{{ if .url }}</a>{{ else }}</span>{{ end }} in <time property='dc:dateCopyrighted'>{{ $.Date.Format "2006-01-02" }}</time>{{ with $.Params.update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}.
 				{{ with .license }}{{ partial "cc-license.html" . }}{{ end }}
 			{{ end }}
 			{{ partial "social.html" $ }}
@@ -27,7 +27,7 @@
 		</div>
 		<div class="userinfo-info" id="maker" itemprop='author' itemscope itemtype='http://schema.org/Person'>
 			{{ if .name }}
-				{{ if $.IsPage }}Written{{ else }}Revised{{ end }} by {{ with .url }}<a href="{{ . }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ end }}{{ .name }}{{ if .url }}</a>{{ else }}</span>{{ end }}{{ if $root }}{{ with $.Site.Params.since }}, since <time property='dc:dateCopyrighted'>{{ . | dateFormat "2006" }}</time>{{ end }}{{ else }} in <time property='dc:dateCopyrighted'>{{ $.Date.Format "2006-01-02" }}</time>{{ with .update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}{{ end }}.
+				{{ if $.IsPage }}Written{{ else }}Revised{{ end }} by {{ with .url }}<a href="{{ . }}" rel="cc:attributionURL" property="cc:attributionName" itemprop='name'>{{ else }}<span property="cc:attributionName" itemprop='name'>{{ end }}{{ .name }}{{ if .url }}</a>{{ else }}</span>{{ end }}{{ if $root }}{{ with $.Site.Params.since }}, since <time property='dc:dateCopyrighted'>{{ . | dateFormat "2006" }}</time>{{ end }}{{ else }} in <time property='dc:dateCopyrighted'>{{ $.Date.Format "2006-01-02" }}</time>{{ with $.Params.update }} (revised in <time property='dc:modified'>{{ . | dateFormat "2006-01-02" }}</time>){{ end }}{{ end }}.
 				{{ with .license }}{{ partial "cc-license.html" . }}{{ end }}
 			{{ end }}
 			{{ partial "social.html" $ }}
