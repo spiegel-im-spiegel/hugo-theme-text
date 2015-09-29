@@ -1,0 +1,25 @@
+{{ partial "top.html" . }}
+<head>
+{{ partial "header.html" . }}
+<title>Cloud of {{ .Title }} - {{ .Site.Title }}</title>
+<meta name="description" content="Entries of {{ .Title }}">
+</head>
+<body>
+{{ partial "prepare.html" . }}
+<div id='container'><!-- Container Area -->
+{{ partial "banner.html" . }}
+
+<main role="main">
+<article itemscope itemtype='http://schema.org/Blog' itemref='maker'>
+<h2 itemprop='name'>Cloud of {{ .Title }}</h2>
+<ul class="cloud">{{ $plural := .Data.Plural }}
+{{ range $key, $value := .Data.Terms }}<li><a href="{{ $plural }}/{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})</li>{{ end }}
+</ul>
+</article>
+</main>
+
+{{ partial "footer.html" . }}
+</div><!-- Container Area -->
+{{ partial "cleanup.html" . }}
+</body>
+{{ partial "end.html" . }}
