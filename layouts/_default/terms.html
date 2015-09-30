@@ -1,8 +1,8 @@
 {{ partial "top.html" . }}
 <head>
 {{ partial "header.html" . }}
-<title>Cloud of {{ .Title }} - {{ .Site.Title }}</title>
-<meta name="description" content="Entries of {{ .Title }}">
+<title>{{ .Title }} Cloud - {{ .Site.Title }}</title>
+<meta name="description" content="{{ .Title }} Cloud">
 </head>
 <body>
 {{ partial "prepare.html" . }}
@@ -11,9 +11,11 @@
 
 <main role="main">
 <article itemscope itemtype='http://schema.org/Blog' itemref='maker'>
-<h2 itemprop='name'>Cloud of {{ .Title }}</h2>
+<h2 itemprop='name'>{{ .Title }} Cloud</h2>
 <ul class="cloud">{{ $plural := .Data.Plural }}
-{{ range $key, $value := .Data.Terms }}<li><a href="/{{ $plural }}/{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})</li>{{ end }}
+{{ range $key, $value := .Data.Terms }}
+	<li><a href="/{{ $plural }}/{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})</li>
+{{ end }}
 </ul>
 </article>
 </main>
