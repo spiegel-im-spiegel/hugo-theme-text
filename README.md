@@ -19,7 +19,7 @@ In this theme you can add variables to your site config file. The following is t
 theme           = "hugo-theme-text"
 baseurl         = "http://example.com"
 title           = "Yuor Site Name"
-languageCode    = "ja"
+languageCode    = "ja" #ISO639/RFC4646 #optional
 disqusShortname = "Disqus Short Name" #optional
 
 [params]
