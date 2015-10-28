@@ -11,7 +11,7 @@
 	<div>
 		{{ with .facebook }}<div class="fb-share-button" data-href="{{ $.Permalink }}" data-layout="button"></div>{{ end }}
 		{{ with .twitter }}<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ $.Title }} - {{ $.Site.Title }}" data-via="{{ . }}" data-count="none" data-dnt="true">Tweet</a>{{ end }}
-		{{ with .flattr }}<a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ $.Title }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>{{ end }}
+		{{ with .flattr }}<a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ $.Title }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this"></a>{{ end }}
 	</div>
 {{ else }}{{ with .Site.Params.author }}{{ $root := eq $.Site.Title $.Title }}
 	<ul class="social">
