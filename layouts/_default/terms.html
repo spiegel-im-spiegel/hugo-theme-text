@@ -11,7 +11,7 @@
 
 <main>
 <article itemscope itemtype='http://schema.org/Blog' itemref='maker'>
-<h2 itemprop='name'>{{ .Title }} Cloud</h2>
+<h1 itemprop='name'>{{ .Title }} Cloud</h1>
 <ul class="cloud">{{ $plural := .Data.Plural }}
 {{ range $key, $value := .Data.Terms }}
 	<li><a href="/{{ $plural }}/{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})</li>

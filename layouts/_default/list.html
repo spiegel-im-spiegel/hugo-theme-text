@@ -11,7 +11,7 @@
 
 <main>
 <article itemscope itemtype='http://schema.org/Blog' itemref='maker'>
-<h2 itemprop='name'>Entries of {{ .Title }} <a href='{{ .RSSLink }}' title='Feed'><i class='fa fa-rss'></i></a></h2>
+<h1 itemprop='name'>Entries of {{ .Title }} <a href='{{ .RSSLink }}' title='Feed'><i class='fa fa-rss'></i></a></h1>
 <ul style="list-style:none;">{{ range .Data.Pages }}{{ partial "li.html" . }}{{ end }}</ul>
 </article>
 </main>

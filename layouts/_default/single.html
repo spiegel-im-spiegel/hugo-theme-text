@@ -1,7 +1,7 @@
 {{ partial "top.html" . }}
 <head>
 {{ partial "header.html" . }}
-<title>{{ .Title }} â€” {{ .Site.Title }}</title>
+<title>{{ .Title }} — {{ .Site.Title }}</title>
 {{ if .Description }}<meta name="description" content="{{ .Description }}">{{ else }}{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}{{ end }}
 </head>
 <body>
@@ -11,11 +11,13 @@
 
 <main>
 <article itemscope itemtype='http://schema.org/BlogPosting' itemref='maker'>
-<section>
 <h1 itemprop='name'>{{ .Title }}{{ with .Section }} [<a href="/{{ . | urlize }}">{{ . }}</a>]{{ end }}</h1>
 <nav class="tags">{{ with .Params.tags }}<div><a href="/tags">Tags</a>:{{ range . }} <a href="/tags/{{ . | urlize }}">#{{ . }}</a>{{ end }}</div>{{ end }}</nav>
+
+<section>
 {{ .Content }}
 </section>
+
 </article>
 </main>
 
