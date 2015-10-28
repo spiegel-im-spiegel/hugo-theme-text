@@ -3,9 +3,9 @@
 	<div class="userinfo">
 		<div class="userinfo-avater">
 			{{ if .avatar }}
-				{{ if .url }}<a href="{{ .url }}">{{ end }}<img src="{{ .avatar }}" width="48" height="48">{{ if .url }}</a>{{ end }}
+				{{ if .url }}<a href="{{ .url }}">{{ end }}<img src="{{ .avatar }}" width="48" height="48" alt="avatar">{{ if .url }}</a>{{ end }}
 			{{ else }}
-				<img src="/images/avatar.png" width="48" height="48">
+				<img src="/images/avatar.png" width="48" height="48" alt="avatar">
 			{{ end }}
 		</div>
 		<div class="userinfo-info" id="maker" itemprop='author' itemscope itemtype='http://schema.org/Person'>
@@ -20,9 +20,9 @@
 	<div class="userinfo">
 		<div class="userinfo-avater">
 			{{ if .avatar }}
-				{{ if .url }}<a href="{{ .url }}">{{ end }}<img src="{{ .avatar }}" width="48" height="48">{{ if .url }}</a>{{ end }}
+				{{ if .url }}<a href="{{ .url }}">{{ end }}<img src="{{ .avatar }}" width="48" height="48" alt="avatar">{{ if .url }}</a>{{ end }}
 			{{ else }}
-				<img src="/images/avatar.png" width="48" height="48">
+				<img src="/images/avatar.png" width="48" height="48" alt="avatar">
 			{{ end }}
 		</div>
 		<div class="userinfo-info" id="maker" itemprop='author' itemscope itemtype='http://schema.org/Person'>
