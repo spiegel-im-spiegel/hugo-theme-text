@@ -11,8 +11,12 @@
 
 <main>
 <article itemscope itemtype='http://schema.org/Blog' itemref='maker'>
+<h1>Contents</h1>
+
+<section>
 <h2 itemprop='name'>All Entries</h2>
 <ul style="list-style:none;">{{ range .Site.Pages }}{{ partial "li.html" . }}{{ end }}</ul>
+</section> <!-- All Entries -->
 </article>
 </main>
 
