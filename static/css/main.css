@@ -130,6 +130,7 @@ ul.title-list {
   padding-left: 1rem;
 }
 ul.title-list > li {
+  text-indent: -1em;
   margin: 1rem 0;
 }
 dl > dt {
