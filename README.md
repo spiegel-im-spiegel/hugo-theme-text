@@ -35,6 +35,7 @@ license   = "CC-License: [by|by-sa|by-nc|by-nc-sa|by-nd|by-nc-nd|cc0]" #optional
 github    = "Your GitHub ID" #optional
 twitter   = "Your Twitter ID" #optional
 medium    = "'@' + Your Medium ID" #optional
+tumblr    = "Your Tumblr ID" #optional
 instagram = "Your Instagram ID" #optional
 facebook  = "Your Facebook ID" #optional
 linkedin  = "Your LinkedIn ID" #optional
