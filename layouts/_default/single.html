@@ -3,6 +3,7 @@
 {{ partial "header.html" . }}
 <title>{{ .Title }} — {{ .Site.Title }}</title>
 {{ if .Description }}<meta name="description" content="{{ .Description }}">{{ else }}{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}{{ end }}
+{{ with .Params.tags }}{{ $len := len . }}<meta name="keywords" content="{{ if eq $len 1 }}{{ index . 0 }}{{ else }}{{ $last := sub $len 1 }}{{ range first $last . }}{{ . }},{{ end }}{{ index . $last }}{{ end }}">{{ end }}
 </head>
 <body>
 {{ partial "prepare.html" . }}
