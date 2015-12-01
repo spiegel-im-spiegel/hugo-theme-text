@@ -2,11 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ .Hugo.Generator }}
 {{ with .Site.Params.favicon }}<link rel="icon" type="image/x-icon" href="{{ . }}">{{ end }}
-<link href='//fonts.googleapis.com/css?family=Noto+Serif%7cNoto+Sans%3a400,700%7cInconsolata%3a400,700' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Noto+Serif%7cNoto+Sans%3a400,700%7cInconsolata%3a400,700' type='text/css'>
+<link rel='stylesheet' href='//fonts.googleapis.com/earlyaccess/notosansjapanese.css' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/text-baldanders.css">
-{{ partial "header-include.html" . }}
 {{ if .RSSlink }}<link rel="alternate" href="{{ .RSSlink }}" type="application/rss+xml" title="{{ if not .IsHome }}{{ .Title }} — {{ end }}{{ .Site.Title }}">{{ else }}<link rel="alternate" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
+{{ partial "header-include.html" . }}
