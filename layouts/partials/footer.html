@@ -16,7 +16,7 @@
 			{{ partial "social.html" $ }}
 		</div>
 	</div>
-{{ else }}{{ with .Site.Params.author }}{{ $root := eq $.Site.Title $.Title }}
+{{ else }}{{ with .Site.Author }}{{ $root := eq $.Site.Title $.Title }}
 	<div class="userinfo">
 		<div class="userinfo-avater">
 			{{ if .avatar }}

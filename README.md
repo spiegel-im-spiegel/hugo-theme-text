@@ -22,12 +22,7 @@ title           = "Yuor Site Name"
 languageCode    = "ja" #ISO639/RFC4646 #optional
 disqusShortname = "Disqus Short Name" #optional
 
-[params]
-since       = "2015-01-01" #datetime format #optional
-description = "Site Description" #optional
-favicon     = "/favicon.ico" #optional
-
-[params.author]
+[author]
 name      = "Your Name"
 url       = "URL for Your Profile" #optional
 avatar    = "URL for Your icon (50×50)" #optional
@@ -37,9 +32,15 @@ twitter   = "Your Twitter ID" #optional
 medium    = "'@' + Your Medium ID" #optional
 tumblr    = "Your Tumblr ID" #optional
 instagram = "Your Instagram ID" #optional
+flickr    = "Your Flickr ID" #optional
 facebook  = "Your Facebook ID" #optional
 linkedin  = "Your LinkedIn ID" #optional
 flattr    = "Your Flattr ID" #optional
+
+[params]
+since       = "2015-01-01" #datetime format #optional
+description = "Site Description" #optional
+favicon     = "/favicon.ico" #optional
 ```
 
 ## License
