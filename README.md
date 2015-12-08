@@ -1,5 +1,7 @@
 # Simple Text (Hugo Theme)
 
+[![GitHub license](https://img.shields.io/badge/license-CC0-blue.svg)](https://raw.githubusercontent.com/spiegel-im-spiegel/hugo-theme-text/master/LICENSE)
+
 "Simple Text" is simple theme for Text Site.
 
 ![Simple Text](https://farm1.staticflickr.com/718/21069070064_9331d16711_o.png)
