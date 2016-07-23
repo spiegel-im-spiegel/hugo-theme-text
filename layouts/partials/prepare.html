@@ -7,8 +7,7 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>{{ end }}{{ with .twitter }}
-<script src='//platform.twitter.com/widgets.js'></script>{{ end }}{{ with .instagram }}
-<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>{{ end }}{{ else }}{{ with .Site.Author }}{{ with .facebook }}<div id="fb-root"></div>
+<script src='//platform.twitter.com/widgets.js'></script>{{ end }}{{ else }}{{ with .Site.Author }}{{ with .facebook }}<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -16,5 +15,4 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>{{ end }}{{ with .twitter }}
-<script src='//platform.twitter.com/widgets.js'></script>{{ end }}{{ with .instagram }}
-<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>{{ end }}{{ end }}{{ end }}
+<script src='//platform.twitter.com/widgets.js'></script>{{ end }}{{ end }}{{ end }}
