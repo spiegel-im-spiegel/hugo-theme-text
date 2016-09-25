@@ -10,11 +10,11 @@
 		{{ with .linkedin }}<li><a href="https://jp.linkedin.com/in/{{ . }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>{{ end }}
 		{{ with .email }}<li><a href="mailto:{{ . }}" target="_blank"><i class="fa fa-envelope"></i></a></li>{{ end }}
 	</ul>
-	<div>
-		{{ with .facebook }}<div class="fb-share-button" data-href="{{ $.Permalink }}" data-layout="button"></div>{{ end }}
-		{{ with .twitter }}<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ $.Title }} - {{ $.Site.Title }}" data-via="{{ . }}" data-count="none" data-dnt="true">Tweet</a>{{ end }}
-		{{ with .flattr }}<a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ $.Title }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this"></a>{{ end }}
-	</div>
+	<ul class="social">
+		{{ with .facebook }}<li><a href="http://www.facebook.com/share.php?u={{ $.Permalink }}" rel=”nofollow” target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>{{ end }}
+		{{ with .twitter }}<li><a href="http://twitter.com/share?text={{ $.Title }}&amp;url={{ $.Permalink }}" rel=”nofollow” target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>{{ end }}
+		{{ with .flattr }}<li><a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ $.Title }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this"></a></li>{{ end }}
+	</ul>
 {{ else }}{{ with .Site.Author }}{{ $root := eq $.Site.Title $.Title }}
 	<ul class="social">
 		{{ with .github }}<li><a href="https://github.com/{{ . }}" target="_blank"><i class="fa fa-github"></i></a></li>{{ end }}
@@ -27,9 +27,9 @@
 		{{ with .linkedin }}<li><a href="https://jp.linkedin.com/in/{{ . }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>{{ end }}
 		{{ with .email }}<li><a href="mailto:{{ . }}" target="_blank"><i class="fa fa-envelope"></i></a></li>{{ end }}
 	</ul>
-	<div>
-		{{ with .facebook }}<div class="fb-share-button" data-href="{{ $.Permalink }}" data-layout="button"></div>{{ end }}
-		{{ with .twitter }}<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ if $root }}{{ $.Site.Title }}{{ else }}{{ $.Title }} - {{ $.Site.Title }}{{ end }}" data-via="{{ . }}" data-count="none" data-dnt="true">Tweet</a>{{ end }}
-		{{ with .flattr }}<a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ if $root }}{{ $.Site.Title }}{{ else }}{{ $.Title }}{{ end }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this"></a>{{ end }}
-	</div>
+	<ul class="social">
+		{{ with .facebook }}<li><a href="http://www.facebook.com/share.php?u={{ $.Permalink }}" rel=”nofollow” target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>{{ end }}
+		{{ with .twitter }}<li><a href="http://twitter.com/share?text={{ if $root }}{{ $.Site.Title }}{{ else }}{{ $.Title }}{{ end }}&amp;url={{ $.Permalink }}" rel=”nofollow” target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>{{ end }}
+		{{ with .flattr }}<li><a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ if $root }}{{ $.Site.Title }}{{ else }}{{ $.Title }}{{ end }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this"></a></li>{{ end }}
+	</ul>
 {{ end }}{{ end }}
