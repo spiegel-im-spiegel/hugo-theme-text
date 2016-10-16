@@ -14,6 +14,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6, header, address, table th, dl > dt, em, strong, cite, *.caution {
   font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+  font-weight: 400; /* normal */
   font-weight: inherit;
   font-variant: inherit;
   font-style: inherit;
@@ -58,7 +59,7 @@ dl > dt {
   line-height: 1.2
 }
 strong {
-  font-weight: bolder;
+  font-weight: 700; /* bold */
 }
 cite {
   font-variant: small-caps;
