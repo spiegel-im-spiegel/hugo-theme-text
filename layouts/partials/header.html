@@ -9,5 +9,5 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/text-baldanders.css">
-{{ if .RSSlink }}<link rel="alternate" href="{{ .RSSlink }}" type="application/rss+xml" title="{{ if not .IsHome }}{{ .Title }} — {{ end }}{{ .Site.Title }}">{{ else }}<link rel="alternate" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
+{{ if .RSSLink }}<link rel="alternate" href="{{ .RSSLink }}" type="application/rss+xml" title="{{ if not .IsHome }}{{ .Title }} — {{ end }}{{ .Site.Title }}">{{ else }}<link rel="alternate" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
 {{ partial "header-include.html" . }}
