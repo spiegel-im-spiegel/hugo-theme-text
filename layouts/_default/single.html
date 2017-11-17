@@ -1,9 +1,11 @@
 {{ partial "top.html" . }}
 <head>
 {{ partial "header.html" . }}
-<title>{{ .Title }} — {{ .Site.Title }}</title>
-{{ if .Description }}<meta name="description" content="{{ .Description }}">{{ else }}{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}{{ end }}
-{{ with .Params.tags }}{{ $len := len . }}<meta name="keywords" content="{{ if eq $len 1 }}{{ index . 0 }}{{ else }}{{ $last := sub $len 1 }}{{ range first $last . }}{{ . }},{{ end }}{{ index . $last }}{{ end }}">{{ end }}
+<title>{{ .Title }} — {{ .Site.Title }}</title>{{ if .Description }}
+<meta name="description" content="{{ .Description }}">{{ else }}{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}{{ end }}{{ with .Params.tags }}
+<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
+
+{{ partial "json-ld-single.html" . }}
 </head>
 <body>
 {{ partial "prepare.html" . }}
@@ -11,8 +13,8 @@
 {{ partial "banner.html" . }}
 
 <main>
-<article itemscope itemtype='http://schema.org/BlogPosting' itemref='maker'>
-<h1 itemprop='name'>{{ .Title }}{{ with .Section }} [<a href="/{{ . | urlize }}">{{ . }}</a>]{{ end }}</h1>
+<article>
+<h1>{{ .Title }}{{ with .Section }} [<a href="/{{ . | urlize }}">{{ . }}</a>]{{ end }}</h1>
 <nav class="tags">{{ with .Params.tags }}<div><a href="/tags">Tags</a>:{{ range sort . }} #<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</div>{{ end }}</nav>
 
 <section>

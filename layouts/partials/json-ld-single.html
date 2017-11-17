@@ -1,0 +1,29 @@
+{{ partial "json-ld-site.html" . }}{{ if .IsPage }}
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Article",
+	"@id": "{{ .Permalink }}",
+	"url": "{{ .Permalink }}",
+	"mainEntityOfPage": "{{ .Permalink }}",
+	"inLanguage": "{{ .Site.LanguageCode }}",
+	"name": {{ .Title | jsonify }}{{ if .Description }},
+	"description": {{ .Description | jsonify }},
+	"headline": {{ .Description | jsonify }}{{ end }}{{if .Params.tags }},
+	"keywords": "{{ delimit .Params.tags ", " }}"{{ end }},
+	"datePublished": {{ .Date.Format "2006-01-02T15:04:05-07:00" | jsonify }}{{ if .Params.update }},
+	"dateModified": {{ .Params.update | dateFormat "2006-01-02T15:04:05-07:00" | jsonify }}{{ end }},
+	"publisher": {
+		"@id": "{{ .Site.BaseURL }}#org"
+	}{{ with .Params.author }},
+	"author": {
+		"@type": "Person",
+		"@id": "{{ $.Permalink | absURL }}#maker",
+		"name": "{{ .name }}"{{ if .url }},
+		"url": "{{ .url }}"{{ end }}{{ if .avatar }},
+		"image": "{{ .avatar | absURL }}"{{ end }}
+	}{{ if .license }},
+	"license": "http://creativecommons.org/licenses/{{ .license }}/4.0/"{{ end }}{{ if .avatar }},
+	"image": "{{ .avatar | absURL }}"{{ end }}{{ end }}
+}
+</script>{{ end }}
