@@ -2,6 +2,33 @@
 <script type="application/ld+json">
 {
 	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"@id": "{{ .Permalink }}#breadcrumb-list",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"item": {
+				"@id": "{{ .Site.BaseURL }}"
+			}
+		}{{ if .Data.Plural }},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"item": {
+				"@type": "WebPage",
+				"@id": "{{ .Site.BaseURL }}{{ .Data.Plural }}/",
+				"url": "{{ .Site.BaseURL }}{{ .Data.Plural }}/",
+				"name": "{{ .Data.Plural }}"{{ with .Site.Author }}{{ if .avatar }},
+				"image": "{{ .avatar | absURL }}"{{ end }}{{ end }}
+			}
+		}{{ end }}
+	]
+}
+</script>
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
 	"@type": "WebPage",
 	"@id": "{{ .Permalink }}",
 	"url": "{{ .Permalink }}",
@@ -15,21 +42,5 @@
 		"@id": "{{ $.Site.BaseURL }}#maker"
 	}{{ if .avatar }},
 	"image": "{{ .avatar | absURL }}"{{ end }}{{ end }}
-}
-</script>
-<script type="application/ld+json">
-{
-	"@context": "http://schema.org",
-	"@type": "BreadcrumbList",
-	"@id": "{{ .Permalink }}#breadcrumb-list",
-	"itemListElement": [
-		{
-			"@type": "ListItem",
-			"position": 1,
-			"item": {
-				"@id": "{{ .Site.BaseURL }}"
-			}
-		}
-	]
 }
 </script>
