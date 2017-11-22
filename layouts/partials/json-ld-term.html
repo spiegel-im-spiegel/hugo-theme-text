@@ -1,0 +1,35 @@
+{{ partial "json-ld-site.html" . }}
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "WebPage",
+	"@id": "{{ .Permalink }}",
+	"url": "{{ .Permalink }}",
+	"inLanguage": "{{ .Site.LanguageCode }}",
+	"name": "{{ .Title }} Cloud",
+	"description": "{{ .Title }} Cloud",
+	"publisher": {
+		"@id": "{{ .Site.BaseURL }}#org"
+	}{{ with .Site.Author }},
+	"author": {
+		"@id": "{{ $.Site.BaseURL }}#maker"
+	}{{ if .avatar }},
+	"image": "{{ .avatar | absURL }}"{{ end }}{{ end }}
+}
+</script>
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"@id": "{{ .Permalink }}#breadcrumb-list",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"item": {
+				"@id": "{{ .Site.BaseURL }}"
+			}
+		}
+	]
+}
+</script>

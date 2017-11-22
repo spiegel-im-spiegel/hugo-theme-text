@@ -10,11 +10,7 @@
 		"@id": "{{ .Site.BaseURL }}#org"
 	}{{ with .Site.Author }},
 	"author": {
-		"@type": "Person",
-		"@id": "{{ $.Site.BaseURL }}#maker",
-		"name": "{{ .name }}"{{ if .url }},
-		"url": "{{ .url }}"{{ end }}{{ if .avatar }},
-		"image": "{{ .avatar | absURL }}"{{ end }}
+		"@id": "{{ $.Site.BaseURL }}#maker"
 	}{{ if .avatar }},
 	"image": "{{ .avatar | absURL }}"{{ end }}{{ end }}{{ with .Site.Params.description }},
 	"description": {{ . | jsonify }}{{ end }}
@@ -32,4 +28,14 @@
 		"url": "http://text.baldanders.info/images/avatar.jpg"
 	}{{ end }}{{ end }}
 }
-</script>
+</script>{{ with .Site.Author }}
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Person",
+	"@id": "{{ $.Site.BaseURL }}#maker",
+	"name": "{{ .name }}"{{ if .url }},
+	"url": "{{ .url }}"{{ end }}{{ if .avatar }},
+	"image": "{{ .avatar | absURL }}"{{ end }}
+}
+</script>{{ end }}

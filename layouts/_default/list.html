@@ -2,7 +2,12 @@
 <head>
 {{ partial "header.html" . }}
 <title>Entries of {{ .Title }} — {{ .Site.Title }}</title>
+<meta property="og:title" content="Entries of {{ .Title }} — {{ .Site.Title }}">
 <meta name="description" content="Entries of {{ .Title }}">
+<meta property="og:description" content="Entries of {{ .Title }}">{{ with .Site.Author }}{{ if .avatar }}
+<meta property="og:image" content="{{ .avatar | absURL }}">{{ end }}{{ end }}
+
+{{ partial "json-ld-list.html" . }}
 </head>
 <body>
 {{ partial "prepare.html" . }}

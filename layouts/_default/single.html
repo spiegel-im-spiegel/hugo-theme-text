@@ -1,9 +1,17 @@
 {{ partial "top.html" . }}
 <head>
 {{ partial "header.html" . }}
-<title>{{ .Title }} — {{ .Site.Title }}</title>{{ if .Description }}
-<meta name="description" content="{{ .Description }}">{{ else }}{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}{{ end }}{{ with .Params.tags }}
-<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
+<title>{{ .Title }} — {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} — {{ .Site.Title }}">{{ if .Description }}
+<meta name="description" content="{{ .Description }}">
+<meta property="og:description" content="{{ .Description }}">{{ else }}{{ with .Site.Params.description }}
+<meta name="description" content="{{ . }}">
+<meta property="og:description" content="{{ . }}">{{ end }}{{ end }}{{ with .Params.tags }}
+<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}{{ with .Params.author }}{{ if .name }}
+<meta name="author" content="{{ .name }}">{{ end }}{{ if .avatar }}
+<meta property="og:image" content="{{ .avatar | absURL }}">{{ end }}{{ else }}{{ with .Site.author }}{{ if .name }}
+<meta name="author" content="{{ .name }}">{{ end }}{{ if .avatar }}
+<meta property="og:image" content="{{ .avatar | absURL }}">{{ end }}{{ end }}{{ end }}
 
 {{ partial "json-ld-single.html" . }}
 </head>

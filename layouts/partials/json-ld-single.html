@@ -2,6 +2,22 @@
 <script type="application/ld+json">
 {
 	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"@id": "{{ .Permalink }}#breadcrumb-list",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"item": {
+				"@id": "{{ .Site.BaseURL }}"
+			}
+		}
+	]
+}
+</script>
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
 	"@type": "Article",
 	"@id": "{{ .Permalink }}",
 	"url": "{{ .Permalink }}",

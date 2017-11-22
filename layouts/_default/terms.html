@@ -2,7 +2,12 @@
 <head>
 {{ partial "header-terms.html" . }}
 <title>{{ .Title }} Cloud — {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} Cloud — {{ .Site.Title }}">
 <meta name="description" content="{{ .Title }} Cloud">
+<meta property="og:description" content="{{ .Title }} Cloud">{{ with .Site.Author }}{{ if .avatar }}
+<meta property="og:image" content="{{ .avatar | absURL }}">{{ end }}{{ end }}
+
+{{ partial "json-ld-term.html" . }}
 </head>
 <body>
 {{ partial "prepare.html" . }}
