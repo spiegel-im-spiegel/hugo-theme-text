@@ -17,9 +17,9 @@
 			"position": 2,
 			"item": {
 				"@type": "WebPage",
-				"@id": "{{ .Site.BaseURL }}{{ .Data.Plural }}/",
-				"url": "{{ .Site.BaseURL }}{{ .Data.Plural }}/",
-				"name": "{{ .Data.Plural }}"{{ with .Site.Author }}{{ if .avatar }},
+				"@id": "{{ .Site.BaseURL }}{{ urlize .Data.Plural }}/",
+				"url": "{{ .Site.BaseURL }}{{ urlize .Data.Plural }}/",
+				"name": "{{ humanize .Data.Plural }}"{{ with .Site.Author }}{{ if .avatar }},
 				"image": "{{ .avatar | absURL }}"{{ end }}{{ end }}
 			}
 		}{{ end }}
@@ -33,8 +33,8 @@
 	"@id": "{{ .Permalink }}",
 	"url": "{{ .Permalink }}",
 	"inLanguage": "{{ .Site.LanguageCode }}",
-	"name": "Entries of {{ .Title }}",
-	"description": "Entries of {{ .Title }}",
+	"name": "Entries of {{ .Title }}{{ with .Data.Plural }} in {{ humanize . }}{{end }}",
+	"description": "Entries of {{ .Title }}{{ with .Data.Plural }} in {{ humanize . }}{{end }}",
 	"publisher": {
 		"@id": "{{ .Site.BaseURL }}#org"
 	}{{ with .Site.Author }},
