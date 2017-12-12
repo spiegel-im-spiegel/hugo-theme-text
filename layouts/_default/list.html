@@ -16,7 +16,7 @@
 
 <main>
 <article>
-<h1>Entries of {{ .Title }} <a href='{{ .RSSLink }}' title='Feed'><i class='fa fa-rss'></i></a>{{ with .Data.Plural }} in <a href="/{{ urlize . }}/">{{ humanize . }}</a>{{end }}</h1>
+<h1>Entries of {{ .Title }} <a href='{{ .RSSLink }}' title='Feed'><i class='fas fa-rss'></i></a>{{ with .Data.Plural }} in <a href="/{{ urlize . }}/">{{ humanize . }}</a>{{end }}</h1>
 <ul class="title-list">{{ range .Data.Pages }}{{ partial "li.html" . }}{{ end }}</ul>
 </article>
 </main>
