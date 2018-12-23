@@ -13,7 +13,8 @@
 	<ul class="social">
 		{{ with .facebook }}<li><a href="http://www.facebook.com/share.php?u={{ $.Permalink }}" target="_blank"><span class="facebook-color"><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i></span></a></li>{{ end }}
 		{{ with .twitter }}<li><a href="http://twitter.com/share?text={{ $.Title }}+from+@{{ . }}&amp;url={{ $.Permalink }}" target="_blank"><span class="twitter-color"><i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i></span></a></li>{{ end }}
-		{{ with .flattr }}<li><a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ $.Title }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this"></a></li>{{ end }}
+		<li><a href="https://getpocket.com/edit?url={{ $.Permalink }}&amp;title={{ $.Title }}" target="_blank"><span class="pocket-color"><i class="fab fa-get-pocket fa-2x" aria-hidden="true"></i></span></a></li>
+		{{ with .flattr }}<li><a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ $.Title }}" target="_blank"><span class="flattr-color"><i class="fas fa-sync-alt  fa-2x"></i> Flattr this</span></a></li>{{ end }}
 	</ul>
 {{ else }}{{ with .Site.Author }}{{ $root := eq $.Site.Title $.Title }}
 	<ul class="social">
@@ -30,6 +31,7 @@
 	<ul class="social">
 		{{ with .facebook }}<li><a href="http://www.facebook.com/share.php?u={{ $.Permalink }}" target="_blank"><span class="facebook-color"><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i></span></a></li>{{ end }}
 		{{ with .twitter }}<li><a href="http://twitter.com/share?text={{ if $root }}{{ $.Site.Title }}{{ else }}{{ $.Title }}{{ end }}+from+@{{ . }}&amp;url={{ $.Permalink }}" target="_blank"><span class="twitter-color"><i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i></span></a></li>{{ end }}
-		{{ with .flattr }}<li><a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ if $root }}{{ $.Site.Title }}{{ else }}{{ $.Title }}{{ end }}" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this"></a></li>{{ end }}
+		<li><a href="https://getpocket.com/edit?url={{ $.Permalink }}&amp;title={{ if $root }}{{ $.Site.Title }}{{ else }}{{ $.Title }}{{ end }}" target="_blank"><span class="pocket-color"><i class="fab fa-get-pocket fa-2x" aria-hidden="true"></i></span></a></li>
+		{{ with .flattr }}<li><a href="https://flattr.com/submit/auto?user_id={{ . }}&amp;url={{ $.Permalink }}&amp;title={{ if $root }}{{ $.Site.Title }}{{ else }}{{ $.Title }}{{ end }}" target="_blank"><span class="flattr-color"><i class="fas fa-sync-alt  fa-2x"></i> Flattr this</span></a></li>{{ end }}
 	</ul>
 {{ end }}{{ end }}
