@@ -4,7 +4,7 @@
 
 "Simple Text" is simple theme for Text Site.
 
-![Simple Text](https://farm1.staticflickr.com/718/21069070064_9331d16711_o.png)
+![Simple Text](https://photo.baldanders.info/flickr/image/21069070064_o.png)
 
 ## Installation & Usage
 
